@@ -1,0 +1,103 @@
+{% from 'index.html' import common_elements,common_elements_end %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body bgcolor="#cecbbc">
+
+    {{common_elements()}}
+    <div class="h-[auto] my-4">
+        <form method="post" enctype="multipart/form-data" class="form">
+            <div class="w-[70%] float-right flex flex-col">
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+                <h1>Personal Information</h1>
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+
+                <div class="w-[55%] flex flex-col  gap-8 my-4 h-[auto]">
+
+                    <div class="flex flex-col">
+                        Patient's ID <input type="text" name="id" class="w-full" placeholder="Patient's ID">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Patient's Name <input type="text" name="name" class="w-full" placeholder="Patient's Name">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Patient's Age <input type="text" name="Age" class="w-full" placeholder="Patient's Age">
+                    </div>
+
+
+                    <div class="flex flex-col">
+                        Patient's Gender
+                        <select name="sex" class="w-full">
+                            <option value="0">Male</option>
+                            <option value="1">Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+                <!-- Medical Reports -->
+                <h1>Medical Information</h1>
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+
+                <div id="medical-records" class="w-[55%] flex flex-col  gap-8 my-4 h-[auto]">
+
+                    <div class="flex flex-col">
+                        No.of Pregnancies: <input type="number" name="Pregnancies" class="w-full"
+                            placeholder="Pregancy Count">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Plasma glucose concentration: <input type="number" name="Glucose" class="w-full"
+                            placeholder="Glucose">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Blood Pressure: <input type="number" name="BloodPressure" class="w-full"
+                            placeholder="Blood-Pressure">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Triceps skin fold thickness (mm): <input type="text" name="SkinThickness" class="w-full"
+                            placeholder="Triceps skin fold thickness (mm)">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Serum Insulin (mu U/ml): <input type="text" name="Insulin" class="w-full"
+                            placeholder="Serum Insulin (mu U/ml)">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Body mass index: <input type="text" name="BMI" class="w-full" placeholder="Body mass index">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Diabetes Pedigree Function: <input type="text" name="DiabetesPedigreeFunction" class="w-full"
+                            placeholder="Diabetes Pedigree Function">
+                    </div>
+                    <div class="flex flex-col">
+
+                        <input type="submit" formaction="/api/diabetes" value="Predict"
+                            class="sell bg-indigo-500 px-4 py-1 text-xl rounded">
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+{% from 'index.html' import common_elements,common_elements_end %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alzheimer Prediction System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<body bgcolor="#cecbbc">
+
+    {{common_elements()}}
+        <div class="h-[auto] my-4">
+        <form method="post" enctype="multipart/form-data" class="form">
+            <div class="w-[70%] float-right flex flex-col">
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+                <h1>Personal Information</h1>
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+
+                <div class="w-[55%] flex flex-col  gap-8 my-4 h-[auto]">
+
+                    <div class="flex flex-col">
+                        Patient's ID <input type="text" name="id" class="w-full" placeholder="Patient's ID">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Patient's Name <input type="text" name="name" class="w-full" placeholder="Patient's Name">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Patient's Age <input type="text" name="Age" class="w-full" placeholder="Patient's Age">
+                    </div>
+
+
+                    <div class="flex flex-col">
+                        Patient's Gender
+                        <select name="sex" class="w-full">
+                            <option value="0">Male</option>
+                            <option value="1">Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+                <!-- Medical Reports -->
+                <h1>Medical Information</h1>
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+
+                <div id="medical-records" class="w-[55%] flex flex-col  gap-8 my-4 h-[auto]">
+
+                    <div class="flex flex-col">
+                        No.of the visit sequence: <input type="number" name="Visit_Counts" class="w-full"
+                            placeholder="No.of the visit sequence">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Time delay between consecutive MRI Scans: <input type="number" name="MRI_Scan_Delay"
+                            class="w-full" placeholder="Time delay between consecutive MRI Scans">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Years of education completed: <input type="number" name="Education" class="w-full"
+                            placeholder="Years of education completed">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Socioeconomic Status: <input type="text" name="Socioeconomic_Status" class="w-full"
+                            placeholder="Socioeconomic Status">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Mini-Mental State Examination score: <input type="text" name="Mini_Mental_State_Examination"
+                            class="w-full" placeholder="Mini-Mental State Examination score">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Clinical Dementia Rating: <input type="text" name="Clinical_Dementia_Rating" class="w-full"
+                            placeholder="Clinical Dementia Rating">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Estimated total intracranial volume: <input type="number"
+                            name="Estimated_Total_Intracranial_Volume" class="w-full"
+                            placeholder="Estimated total intracranial volume">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Normalized whole brain volume: <input type="text" name="Normalize_Whole_Brain_Volume"
+                            class="w-full" placeholder="Normalized whole brain volume">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Atlas scaling factor: <input type="text" name="Atlas_Scaling_Factor" class="w-full"
+                            placeholder="Atlas scaling factor">
+                    </div>
+                    <div class="flex flex-col">
+                        <input type="submit" formaction="/api/alzheimer" value="Predict"
+                        class="sell bg-indigo-500 px-4 py-1 text-xl rounded">
+                    </div>
+                    
+                </div>
+            </div>
+
+    </div>
+
+    </div>
+
+    </form>
+    </div>
+</body>
+
+</html>

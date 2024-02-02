@@ -1,0 +1,80 @@
+{% from 'index.html' import common_elements,common_elements_end %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dengue Prediction System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body bgcolor="#cecbbc">
+
+    {{common_elements()}}
+    <div class="h-[auto] my-4">
+        <form method="post" enctype="multipart/form-data" class="form">
+            <div class="w-[70%] float-right flex flex-col">
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+                <h1>Personal Information</h1>
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+
+                <div class="w-[55%] flex flex-col  gap-8 my-4 h-[auto]">
+
+                    <div class="flex flex-col">
+                        Patient's ID <input type="text" name="id" class="w-full" placeholder="Patient's ID">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Patient's Name <input type="text" name="name" class="w-full" placeholder="Patient's Name">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Patient's Age <input type="text" name="Age" class="w-full" placeholder="Patient's Age">
+                    </div>
+
+
+                    <div class="flex flex-col">
+                        Patient's Gender
+                        <select name="sex" class="w-full">
+                            <option value="0">Male</option>
+                            <option value="1">Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+                <!-- Medical Reports -->
+                <h1>Medical Information</h1>
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+
+                <div id="medical-records" class="w-[55%] flex flex-col  gap-8 my-4 h-[auto]">
+
+                    <div class="flex flex-col">
+                        Non-Structural Protein Test: <input type="number" name="NS1" class="w-full"
+                            placeholder="Non-Structural Protein">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Immunoglobulin G Test: <input type="number" name="IgG" class="w-full"
+                            placeholder="Immunoglobulin G Test">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Immunoglobulin M Test: <input type="number" name="IgM" class="w-full"
+                            placeholder="Immunoglobulin G Test">
+                    </div>
+                    <div class="flex flex-col">
+
+                        <input type="submit" formaction="/api/dengue" value="Predict"
+                            class="sell bg-indigo-500 px-4 py-1 text-xl rounded">
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    </form>
+</body>
+
+</html>

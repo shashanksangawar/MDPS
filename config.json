@@ -1,0 +1,23 @@
+{
+    "Models": {
+        "Alzheimer": "../Models/alzheimer.sav",
+        "Heart": "../Models/heart.sav",
+        "Cancer": "../Models/breast_cancer.sav",
+        "Dengue": "../Models/Dengue.sav",
+        "Diabetes": "../Models/diabetes.sav"
+    },
+    "Datasets": {
+        "Alzheimer": "../Datasets/alzheimers.csv",
+        "Heart": "../Datasets/heart_disease_uci.csv",
+        "Cancer": "../Datasets/cancer.csv",
+        "Dengue": "../Datasets/dengue.csv",
+        "Diabetes": "../Datasets/diabetes.csv"
+    },
+    "Notebooks": {
+        "Alzheimer": "../Notebooks/Alzheimer's_Disease.ipynb",
+        "Heart": "../Notebooks/Heart_Disease.ipynb",
+        "Cancer": "../Notebooks/Breast_Cancer.ipynb",
+        "Dengue": "../Notebooks/Dengue.ipynb",
+        "Diabetes": "../Notebooks/Diabetes.ipynb"
+    }
+}

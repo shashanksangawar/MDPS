@@ -1,0 +1,149 @@
+{% from 'index.html' import common_elements,common_elements_end %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body bgcolor="#cecbbc">
+
+    {{common_elements()}}
+    <div class="h-[auto] my-4">
+        <form method="post" enctype="multipart/form-data" class="form">
+            <div class="w-[70%] float-right flex flex-col">
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+                <h1>Personal Information</h1>
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+
+                <div class="w-[55%] flex flex-col  gap-8 my-4 h-[auto]">
+
+                    <div class="flex flex-col">
+                        Patient's ID <input type="text" name="id" class="w-full" placeholder="Patient's ID">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Patient's Name <input type="text" name="name" class="w-full" placeholder="Patient's Name">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Patient's Age <input type="text" name="age" class="w-full" placeholder="Patient's Age">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Patient's Gender
+                        <select name="sex" class="w-full">
+                            <option value="0">Male</option>
+                            <option value="1">Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+                <!-- Medical Reports -->
+                <h1>Medical Information</h1>
+                <div class="border-4 border-light-gray-500 w-[45%] mt-4"></div>
+
+                <div id="medical-records" class="w-[55%] flex  flex-col  gap-8 my-4 h-[auto]">
+
+                    <div class="flex flex-col">
+                        Chest-Pain type:
+                        <select name="cp" class="w-full">
+                            <option value="1">Asymptomatic</option>
+                            <option value="2">Non-Anginal</option>
+                            <option value="3">Atypical Angina</option>
+                            <option value="0">Typical Angina</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col">
+                        Blood-Pressure-Level(mm/Hg) <input type="number" name="trestbps" class="w-full"
+                            placeholder="Blood-Pressure">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Cholestral(mg/dl) <input type="number" name="chol" class="w-full" placeholder="Cholestral">
+                    </div>
+
+                    <div>
+                        <div class="flex flex-col">
+                            Is Fasting Blood Sugar > 120?
+                            <div>
+                                <select name="fbs" class="w-full">
+                                    <option value="1">True</option>
+                                    <option value="0">False</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col">
+                        Electro-Cardiographic Results(ECG):
+                        <select name="restecg" class="w-full">
+                            <option value="0">lv hypertrophy</option>
+                            <option value="1">normal</option>
+                            <option value="2">st-t abnormality</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col">
+                        Maximum Heart Rate Achieved <input type="number" name="thalch" class="w-full"
+                            placeholder="Patient's Maximum Heart Rate">
+                    </div>
+
+                    <div>
+                        <div class="flex flex-col">
+                            Does Exercise causes pain
+                            <div>
+                                <select name="exang" class="w-full">
+                                    <option value="1">True</option>
+                                    <option value="0">False</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col">
+                        ST depression induced by exercise <input type="number" name="oldpeak" class="w-full"
+                            placeholder="ST depression">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Slope of the Peak exercise ST segment
+                        <select name="slope" class="w-full">
+                            <option value="1">Flat</option>
+                            <option value="2">Upsloping</option>
+                            <option value="0">Downsloping</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col">
+                        No.of Major Vessels (0-3) colored by Fluoroscopy <input type="number" name="ca" class="w-full"
+                            placeholder="Major Cells">
+                    </div>
+
+                    <div class="flex flex-col">
+                        Thalassemia
+                        <select name="thal" class="w-full">
+                            <option value="1">Normal</option>
+                            <option value="2">Reversable Defect</option>
+                            <option value="0">Fixed Defect</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <input type="submit" formaction="/api/heart_disease" value="Predict"
+                            class="sell bg-indigo-500 px-4 py-1 text-xl rounded">
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
